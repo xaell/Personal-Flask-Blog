@@ -1,0 +1,17 @@
+services:
+  database:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_DEV_PASSWORD}
+    ports:
+      - "5432:5432"
+      
+  blog:
+    build: .
+    environment:
+      FLASK_APP: "blog:create_app"
+      FLASK_ENV: development
+    ports:
+      - "5000:5000"
+    depends_on:
+      - database
