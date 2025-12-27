@@ -15,3 +15,5 @@ services:
       - "5000:5000"
     depends_on:
       - database
+    volumes:
+      - ./blog:/personal-flask-blog/blog #auto reload
