@@ -2,6 +2,9 @@ import os
 from flask import Flask, Blueprint
 from config import DevelopmentConfig, ProductionConfig, Config
 from .frontend.frontend import frontendBP
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
 
 def create_app(test_config=None):
     # create and configure the app
@@ -17,10 +20,16 @@ def create_app(test_config=None):
         app.config.from_object(ProductionConfig)
     else:
         app.config.from_object(DevelopmentConfig)
+    
+    #database config
+    db.init_app(app)
 
     # a simple page that says hello
     @app.route('/hello')
     def hello():
         return 'Hello World'
     
+    @app.route('/test')
+    def test():
+        return "test"
     return app

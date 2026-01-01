@@ -2,7 +2,9 @@ services:
   database:
     image: postgres
     environment:
+      POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_DEV_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - "5432:5432"
       
@@ -11,6 +13,7 @@ services:
     environment:
       FLASK_APP: "blog:create_app"
       FLASK_ENV: development
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_DEV_PASSWORD}@database:5432/${POSTGRES_DB}
     ports:
       - "5000:5000"
     depends_on:
