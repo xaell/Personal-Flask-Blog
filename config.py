@@ -7,6 +7,9 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL", "sqlite:///dev.db")
     
 class ProductionConfig(Config):
     DEBUG = False
+    #Prod database not done yet, do later
+    SQLALCHEMY_DATABASE_URI = os.environ.get("PROD_DATABASE_URL")
