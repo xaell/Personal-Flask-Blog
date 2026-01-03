@@ -1,10 +1,10 @@
-from flask import Blueprint
+from flask import render_template
+from . import frontendBP
 
-frontendBP = Blueprint('frontendBP', __name__)
-
+@frontendBP.route("/")
 @frontendBP.route("/home")
 def home():
-    return "This should be the home page"
+    return render_template("frontend/home.html")
 
 @frontendBP.route("/aboutMe")
 def aboutMe():
