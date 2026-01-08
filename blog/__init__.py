@@ -1,7 +1,8 @@
 import os
-from flask import Flask, Blueprint
-from config import DevelopmentConfig, ProductionConfig, Config
+from flask import Flask
+from blog.config import DevelopmentConfig, ProductionConfig, Config
 from .frontend.frontend import frontendBP
+from .backend.backend import backendBP
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import OperationalError
 from sqlalchemy import text
@@ -14,6 +15,7 @@ def create_app(test_config=None):
 
     #register blueprints
     app.register_blueprint(frontendBP)
+    app.register_blueprint(backendBP)
 
     #config
     app.config.from_object(Config)
@@ -39,12 +41,4 @@ def create_app(test_config=None):
     with app.app_context():
         check_db_connection()
 
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello World'
-    
-    @app.route('/test')
-    def test():
-        return "test"
     return app
