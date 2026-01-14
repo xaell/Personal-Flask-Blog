@@ -1,0 +1,35 @@
+body{
+    background-color: beige;
+}
+
+#main_screen{
+    width: 80vw;
+    background-color: aqua;
+    margin: 5vh auto;
+    padding-bottom: 1vh;
+}
+
+#header{
+    background-color: red;
+}
+
+#header ul{
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+}
+
+#header li{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 1vh 0;
+}
+
+#banner{
+    width: 80vw;
+    height: 15vh;
+    background-color: royalblue;
+    margin: 0;
+    display: flex;
+}

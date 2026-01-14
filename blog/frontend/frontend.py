@@ -14,6 +14,7 @@ frontendBP = Blueprint(
 def home():
     session = create_session()
     try:
+        #This will order the post by date and frontend displays them in order
         data = session.query(Post).order_by(Post.created_at.desc()).all()
         print("Connection succeeded: ")
         print(data)
