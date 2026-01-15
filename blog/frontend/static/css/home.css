@@ -33,3 +33,35 @@ body{
     margin: 0;
     display: flex;
 }
+
+#display li{
+    list-style-type: none;
+    margin: 0;
+}
+
+#display ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.post{
+    background-color: rgba(199, 146, 255, 0.616);
+    padding: 3px 50px 5px;
+    display: flex;
+    flex-direction: column;
+
+    max-width: 80%;
+    margin: 10px auto;
+}
+
+.timestamp{
+    color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: end;
+}
+
+hr{
+    color: black;
+    width: 50vw;
+    margin: 0;
+}

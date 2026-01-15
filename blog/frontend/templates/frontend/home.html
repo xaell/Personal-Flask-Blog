@@ -6,10 +6,7 @@
 
 {% block content %}
 <div id = "main_screen">
-    <div id = "banner">
-        <img src="#" >
-    </div>
-    
+    <img src="#" id = "banner">
     <nav id = "header">
         <ul>
             <li><a href="#">Home</a></li>
@@ -20,11 +17,15 @@
         <ul>
         {% for entries in data %}
             <li>
-                <strong>{{ entries.title }}</strong> - {{ entries.created_at }}<br>
-                {{ entries.body }}
+                <div class = "post">
+                    <h1 class = "post_title">{{ entries.title }}</h1>
+                    <hr>
+                    <p class = post_body>{{ entries.body }}</p>
+                    <i><p class = timestamp>{{ entries.created_at }}</p></i>
+                </div>
             </li>
         {% endfor %}
-    </ul>
+        </ul>
     </div>
 </div>
 {% endblock %}
