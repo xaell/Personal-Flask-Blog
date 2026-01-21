@@ -1,0 +1,12 @@
+:root {
+  /*Colors*/
+  --primary-bg-color: #d9bcff;
+
+  /*Fonts*/
+  --primary-font: "Zilla Slab", serif;
+
+  /*Font weight and sizes*/
+  --post-title: "700";
+  --post-title-size: 36px;
+  --base-normal: "400";
+}

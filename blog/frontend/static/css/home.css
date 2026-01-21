@@ -1,16 +1,19 @@
-body{
-    background-color: beige;
-}
+@import url("standards.css");
 
 #main_screen{
     width: 80vw;
-    background-color: aqua;
-    margin: 5vh auto;
+    background: #1c51ff;
+    background: linear-gradient(20deg, rgba(28, 81, 255, 0.7) 0%, rgba(148, 52, 217, 0.7) 100%);
+    margin: 0 auto;
     padding-bottom: 1vh;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #header{
-    background-color: red;
+    background-color: rgb(255, 255, 255);
 }
 
 #header ul{
@@ -45,13 +48,36 @@ body{
 }
 
 .post{
-    background-color: rgba(199, 146, 255, 0.616);
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 3px 50px 5px;
     display: flex;
     flex-direction: column;
 
-    max-width: 80%;
-    margin: 10px auto;
+    margin: 15px 40px;
+    
+    /*Math for custom post display shape*/
+    clip-path: polygon(
+        /*Top Left*/
+            var(--corner)               0%,
+            calc(100% - var(--corner))  0%,
+        /*Top Right*/
+            100%                        var(--corner),
+            100%                        calc(100% - var(--corner)),
+        /*Bottom Right*/
+            calc(100% - var(--corner))  100%,
+            var(--corner)               100%,
+        /*Bottom Left*/
+            0%                          calc(100% - var(--corner)),
+            0%                          var(--corner)
+    );
+
+    --corner: 1.5em;
+}
+
+.post h1{
+    font-family: var(--primary-font);
+    font-size: var(--post-title-size);
+    font-weight: var(--post-title);
 }
 
 .timestamp{
@@ -62,6 +88,5 @@ body{
 
 hr{
     color: black;
-    width: 50vw;
     margin: 0;
 }
