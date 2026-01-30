@@ -4,3 +4,5 @@ python-dotenv==1.2.1
 Flask-SQLAlchemy==3.0
 psycopg2-binary==2.9.11
 Jinja2==3.1.6
+wtforms_alchemy
+flask_wtf

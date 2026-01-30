@@ -5,6 +5,6 @@ backendBP = Blueprint(
     __name__,
     url_prefix="/api")
 
-@backendBP.route("/getPosts", methods=["GET"])
-def getPosts():
-    return "posts should be returned here"
+@backendBP.route("/handle_post", methods=["GET"])
+def handle_post():
+    return "posts should be handled here"

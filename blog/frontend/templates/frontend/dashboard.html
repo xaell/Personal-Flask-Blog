@@ -1,0 +1,11 @@
+{% extends "frontend/base.html" %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+    <h1>Dashboard Page</h1>
+    <form method="POST" action="{{url_for('backendBP.handle_post')}}">
+        {{ form.hidden_tag() }}
+    </form>
+{% endblock %}
