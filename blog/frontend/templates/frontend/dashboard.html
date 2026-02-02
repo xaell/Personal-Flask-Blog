@@ -7,5 +7,21 @@
     <h1>Dashboard Page</h1>
     <form method="POST" action="{{url_for('backendBP.handle_post')}}">
         {{ form.hidden_tag() }}
+
+        <div>
+            {{ form.title.label }}
+            {{ form.title() }}
+        </div>
+
+        <div>
+            {{ form.content.label }}
+            <br>
+            {{ form.content() }}
+        </div>
+
+        <div>
+            {{ form.media.label }}
+            {{ form.media() }}
+        </div>
     </form>
 {% endblock %}

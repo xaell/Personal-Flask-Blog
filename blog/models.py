@@ -12,4 +12,5 @@ class Post(Base):
   id = Column(Integer, autoincrement=True, primary_key=True)
   title = Column(String(50), nullable=False)
   body = Column(Text)
+  mediaURL = Column(Text)
   created_at = Column(DateTime (timezone=True), server_default=func.now())
