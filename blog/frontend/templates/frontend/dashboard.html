@@ -5,23 +5,34 @@
 
 {% block content %}
     <h1>Dashboard Page</h1>
-    <form method="POST" action="{{url_for('backendBP.handle_post')}}">
+    <form method="POST" action="{{url_for('backendBP.handle_post')}}" enctype = "multipart/form-data">
         {{ form.hidden_tag() }}
 
         <div>
             {{ form.title.label }}
             {{ form.title() }}
+            {% for error in form.title.errors %}
+                <span style="color:red">{{ error }}</span>
+            {% endfor %}
         </div>
 
         <div>
             {{ form.content.label }}
             <br>
             {{ form.content() }}
+            {% for error in form.content.errors %}
+                <span style="color:red">{{ error }}</span>
+            {% endfor %}
         </div>
 
         <div>
             {{ form.media.label }}
             {{ form.media() }}
+            {% for error in form.media.errors %}
+                <span style="color:red">{{ error }}</span>
+            {% endfor %}
         </div>
+
+        {{ form.submit() }}
     </form>
 {% endblock %}
