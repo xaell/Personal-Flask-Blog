@@ -7,8 +7,9 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - "5432:5432"
-    volumes:
-    - postgres_data:/var/lib/postgresql/data  #This should preserve data between sessions (Delete if issue)
+    #volumes:
+    #- postgres_data:/var/lib/postgresql/data  #This should preserve data between sessions (Delete if issue)
+    # TODO: Find a way to mount data so I don't have to remake a database every time (Shouldn't matter though since docker takes snapshots (I think))
   blog:
     build: .
     environment:

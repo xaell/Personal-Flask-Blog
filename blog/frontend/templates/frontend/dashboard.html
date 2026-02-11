@@ -11,6 +11,7 @@
         <div>
             {{ form.title.label }}
             {{ form.title() }}
+            <br>
             {% for error in form.title.errors %}
                 <span style="color:red">{{ error }}</span>
             {% endfor %}
@@ -20,6 +21,7 @@
             {{ form.content.label }}
             <br>
             {{ form.content() }}
+            <br>
             {% for error in form.content.errors %}
                 <span style="color:red">{{ error }}</span>
             {% endfor %}
@@ -28,6 +30,7 @@
         <div>
             {{ form.media.label }}
             {{ form.media() }}
+            <br>
             {% for error in form.media.errors %}
                 <span style="color:red">{{ error }}</span>
             {% endfor %}
