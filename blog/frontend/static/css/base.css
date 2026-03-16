@@ -1,14 +1,15 @@
 @import url("standards.css");
 
 *{
-    font-family: var(--primary-font);
-    font-weight: var(--base-normal);
-    font-style: normal;
+  font-family: var(--primary-font);
+  font-weight: var(--base-normal);
+  font-style: normal;
 }
 
 body{
-    margin: 0;
-    background-color: var(--primary-bg-color);
+  margin: 0;
+  background-color: var(--primary-bg-color);
+  padding: 0 10vw;
 }
 
 .zilla-slab-light {

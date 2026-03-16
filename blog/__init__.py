@@ -37,8 +37,8 @@ def create_app(test_config=None):
             print("Database connection OK")
         except OperationalError as e:
             print("Database connection failed:", e)
-
+    
     with app.app_context():
         check_db_connection()
-
+    
     return app

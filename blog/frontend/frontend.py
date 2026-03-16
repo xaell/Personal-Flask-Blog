@@ -17,8 +17,6 @@ def home():
     try:
         #This will order the post by date and frontend displays them in order
         data = session.query(Post).order_by(Post.created_at.desc()).all()
-        print("Connection succeeded: ")
-        print(data)
     finally:
         session.close()
     return render_template("frontend/home.html", data = data)
@@ -27,7 +25,7 @@ def home():
 def aboutMe():
     return render_template("frontend/aboutMe.html")
 
-@frontendBP.route("/dashboard", methods = ["GET"])
-def dashboard():
+@frontendBP.route("/makePost", methods = ["GET"])
+def makePost():
     form = SubmitPost()
-    return render_template("frontend/dashboard.html", form = form)
+    return render_template("frontend/makePost.html", form = form)

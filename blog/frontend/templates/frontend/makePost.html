@@ -1,13 +1,13 @@
 {% extends "frontend/base.html" %}
 
 {% block head %}
+    <link rel="stylesheet" href="{{ url_for('frontendBP.static', filename='css/makePost.css') }}">
 {% endblock %}
 
 {% block content %}
-    <h1>Dashboard Page</h1>
+    <h1>makePost Page</h1>
     <form method="POST" action="{{url_for('backendBP.handle_post')}}" enctype = "multipart/form-data">
         {{ form.hidden_tag() }}
-
         <div>
             {{ form.title.label }}
             {{ form.title() }}

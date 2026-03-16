@@ -16,6 +16,8 @@ services:
       FLASK_APP: "blog:create_app"
       FLASK_ENV: development
       DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_DEV_PASSWORD}@database:5432/${POSTGRES_DB}
+      PROD_DATABASE_URL: postgresql://${POSTGRES_PROD_USER}:${POSTGRES_PROD_PASSWORD}@database:5432/${POSTGRES_PROD_DB}
+
     ports:
       - "5000:5000"
     depends_on:
